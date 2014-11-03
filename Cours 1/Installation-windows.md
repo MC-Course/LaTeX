@@ -21,3 +21,5 @@ Téléchargez la version complète (net installer). Si votre processeur supporte
 ###Installation de TexMaker
 
 Rendez-vous sur cette page : [http://www.xm1math.net/texmaker/download_fr.html](http://www.xm1math.net/texmaker/download_fr.html)
+
+Téléchargez l'application et lancez l'installation.
