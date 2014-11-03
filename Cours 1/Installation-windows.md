@@ -5,6 +5,12 @@ Rendez-vous sur cette page : [http://miktex.org/download](http://miktex.org/down
 
 Téléchargez la version complète (net installer). Si votre processeur supporte le 64bits, prenez la version 64 bits.
 
+####1ère partie, téléchargement des packages
+![Cliquez sur "Download MikTeX"](/Cours 1/Images/MiKTeX_Download.png)
+
+![Installez la version complète](/Cours 1/Images/MiKTeX_Download2.png)
+
+####2ère partie, installation
 ![Cliquez sur "Download MikTeX"](/Cours 1/Images/MiKTeX_Install.png)
 
 ![Installez la version complète](/Cours 1/Images/MiKTeX_Install2.png)
@@ -15,5 +21,3 @@ Téléchargez la version complète (net installer). Si votre processeur supporte
 ###Installation de TexMaker
 
 Rendez-vous sur cette page : [http://www.xm1math.net/texmaker/download_fr.html](http://www.xm1math.net/texmaker/download_fr.html)
-
-###Configuration de TexMaker
