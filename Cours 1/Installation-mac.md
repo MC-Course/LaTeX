@@ -1,21 +1,9 @@
-#Installation de Latex sur windows
-##MiKTeX
+#Installation de Latex sur mac
+##MacTeX
 ###Installation de MiKTeX
-Rendez-vous sur cette page : [http://miktex.org/download](http://miktex.org/download)
+Rendez-vous sur cette page : [http://www.tug.org/mactex/](http://www.tug.org/mactex/)
 
-Téléchargez la version complète (net installer). Si votre processeur supporte le 64bits, prenez la version 64 bits.
-
-####1ère partie, téléchargement des packages
-![Cliquez sur "Download MikTeX"](/Cours 1/Images/MiKTeX_Download.png)
-
-![Installez la version complète](/Cours 1/Images/MiKTeX_Download2.png)
-
-####2ère partie, installation
-![Cliquez sur "Download MikTeX"](/Cours 1/Images/MiKTeX_Install.png)
-
-![Installez la version complète](/Cours 1/Images/MiKTeX_Install2.png)
-
-*Remarque: l'installation complète peut prendre un certain temps.*
+Téléchargez le paquet *MacTeX.pkg*, puis installez le.
 
 ##TexMaker
 ###Installation de TexMaker
