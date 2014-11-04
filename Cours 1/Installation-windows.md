@@ -28,14 +28,16 @@ Téléchargez l'application et lancez l'installation.
 
 Si votre installation s'est bien déroulée, vous pouvez copier ce morceau de code dans TexMaker :
 
-```\documentclass{article}
+```
+\documentclass{article}
 \title{Cours de LaTeX}
 \author{Charles Martin}
 \date{Novembre 2014}
 \begin{document}
    \maketitle
    Hello world!
-\end{document}```
+\end{document}
+```
 
 Comme ceci :
 
