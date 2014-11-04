@@ -43,6 +43,6 @@ Comme ceci :
 
 ![Exemple](/Cours 1/Images/TexMaker Hello World.png)
 
-Enregistrez, puis cliquez sur :
+Enregistrez, puis cliquez sur le bouton de compilation (la flèche à gauche de "*compilation rapide*") :
 
 ![Compilation](/Cours 1/Images/TexMaker Compilation.png)
