@@ -45,4 +45,4 @@ Comme ceci :
 
 Enregistrez, puis cliquez sur :
 
-![Compilation](/Cours 1/Images/TexMaker Compilation.png.png)
+![Compilation](/Cours 1/Images/TexMaker Compilation.png)
