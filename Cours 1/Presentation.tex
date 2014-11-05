@@ -39,6 +39,27 @@
     captionpos=t 
 } 
 \lstset{%
+    breaklines=true,%default : false 
+  breakindent=10pt,%default: 20pt 
+    linewidth=\linewidth,%default : \linewidth,
+    basicstyle=\ttfamily\tiny,% cannot take arguments
+    keywordstyle=\color{Blue}\sffamily\bfseries,                                
+    identifierstyle=\color{Black},                                      
+    commentstyle=\color{OliveGreen}\itshape,                                    
+    stringstyle=\rmfamily,                                                      
+    showspaces=false,%default false
+    showstringspaces=false,%default: true
+    backgroundcolor=\color{Yellow!30},
+    frame=single,%default frame=none 
+    rulecolor=\color{Red},  
+    % the following must be defined to make hacking work.
+    framerule=0.4pt,%expand outward 
+    framesep=3pt,%expand outward
+    xleftmargin=3.4pt,%to make the frame fits in the text area. 
+    xrightmargin=3.4pt,%to make the frame fits in the text area. 
+    tabsize=2%,%default :8 only influence the lstlisting and lstinline.
+}
+\lstset{%
     %explpreset below will affect LTX only.
     explpreset={%
                             language={[LaTeX]TeX},
@@ -58,6 +79,13 @@
 \author{Charles Martin}
 
 \begin{document}
+
+\definecolor{Red}{RGB}{255,0,0}
+\definecolor{Grey}{RGB}{205,201,201}
+\definecolor{Yellow}{RGB}{255,255,0}
+\definecolor{Blue}{RGB}{50,50,150}
+\definecolor{Black}{RGB}{0,0,0}
+\definecolor{OliveGreen}{RGB}{0,100,0}
 
 \frame{\titlepage}
 
@@ -114,6 +142,8 @@ Hello, World !
 \end{LTXexample}
 }
 
+\subsection{Les espaces}
+
 \frame[containsverbatim]{
 \frametitle{Les espaces}
 
@@ -128,6 +158,8 @@ Un nouveau paragraphe commence.
 \end{LTXexample}
 }
 
+\subsection{Les caractères spéciaux}
+
 \frame[containsverbatim]{
 \frametitle{Les caractères spéciaux}
 Les symboles suivants sont des caractères réservés :
@@ -141,6 +173,8 @@ Pour les utiliser, placez un \textbackslash {} devant:
 \textbackslash
 \end{LTXexample}
 }
+
+\subsection{Les commandes}
 
 \frame[containsverbatim]{
 \frametitle{Les commandes}
@@ -157,6 +191,8 @@ Vous pouvez commencer une nouvelle ligne juste ici ! \newline Merci!
 \end{LTXexample}
 }
 
+\subsection{Les commentaires}
+
 \frame[containsverbatim]{
 \frametitle{Les commentaires}
 Les commentaires commencent par le caractère \%.
@@ -168,27 +204,29 @@ Ce message est visible.
 \end{LTXexample}
 }
 
+\subsection{La structure du fichier}
+
 \frame[containsverbatim]{
 \frametitle{La structure du fichier}
 Lorsque \LaTeX{} traite un fichier, il s'attend à suivre une certaine structure.
-Chaque source \LaTeX{} commence avec la commande :
-\newline
-\newline
-\textbackslash documentclass \{ \}
-\newline
-\newline
-On spécifie ici quel type de document l'on va écrire.
+Exemple de structure simple :
 
-%\begin{LTXexample}
-%\documentclass{article} %On va écrire un article
-%\title{Cours de LaTeX} %On spécifie le titre
-%\author{Charles Martin} %On spécifie l'auteur
-%\date{Novembre 2014} %On spécifie la date
-%\begin{document} %Le document commence ici
-%Contenu %On trouvera ici le contenu
-%\end{document} %Le document se termine ici
-%\end{LTXexample}
-
+\begin{LTXexample}
+%On specifie le type de document, ici, un article
+\documentclass{article} 
+%On specifie le titre de l'article
+\title{Cours de LaTeX} 
+%On specifie l'auteur
+\author{Charles Martin} 
+%On specifie la date
+\date{Novembre 2014} 
+%Le document commence ici
+\begin{document} 
+%On trouvera ici le contenu
+Contenu du document.
+%Le document se termine ici 
+\end{document} 
+\end{LTXexample}
 }
 
 \end{document}
