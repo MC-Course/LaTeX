@@ -104,7 +104,7 @@
   Le moteur derrière \LaTeX{} est \TeX{} .
   
   \TeX{} a été crée en 1978 par Donald Knuth.
-  \begin{block}{Les objectifs :}    
+  \begin{block}{Les objectifs de \TeX :}    
    \begin{itemize}
     \item Permettre d’écrire des livres de qualité avec un minimum d’effort
     \item Fournir un système qui donnera toujours le même résultat, maintenant et à l’avenir.
@@ -122,7 +122,7 @@
 \subsection{Introduction}
 \begin{frame}{\LaTeX}
   \LaTeX{} a été crée en 1980 par Leslie Lamport.
-  \begin{block}{Les objectifs :}    
+  \begin{block}{Les objectifs de \LaTeX :}    
    \begin{itemize}
     \item Fournir un language de haut niveau.
     \item Utiliser la puissance de \TeX{}.
@@ -178,7 +178,7 @@ Pour les afficher dans votre document, placez un \textbackslash {} devant:
 
 \frame[containsverbatim]{
 \frametitle{Les formules math{\'e}matiques}
-Les formules mat{\'e}matiques sont sont plac{\'e}es entre \$ et \$.
+Les formules mat{\'e}matiques sont plac{\'e}es entre \$ et \$.
 
 \begin{LTXexample}
 $a^2 + b^2 = c^2$
@@ -343,9 +343,8 @@ Quelques packages utilisé couramment :
     \item \textbackslash usepackage[francais, turkish]\{babel\}
     \item \textbackslash usepackage\{tikz\}
     \item \textbackslash usepackage[all]\{xy\}
-    \item amsthm
-    \item amssymb
-    \item graphicx
+    \item \textbackslash usepackage\{amsmath\}
+    \item \textbackslash usepackage\{graphicx\}
    \end{itemize}
 }
 
@@ -480,7 +479,7 @@ required/amslatex/amscls/doc/amsthdoc.pdf
 \subsection{graphicx}
 \frame[containsverbatim]{
 \frametitle{graphicx}
-graphicx étend la liste des symboles.
+graphicx permet d'afficher des images.
 \begin{LTXexample}
 \begin{figure}[position]
    \includegraphics[scale=0.10]{./Images/latex.jpg}
