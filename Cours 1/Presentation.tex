@@ -1,17 +1,18 @@
 \makeatletter\let\ifGm@compatii\relax\makeatother
 \documentclass{beamer}
+\usepackage{etex}
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \usepackage[francais, turkish]{babel}
-\usepackage{amssymb,amsthm,amsmath}
+%\usepackage{amssymb,amsthm,amsmath}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage[all]{xy}
 
 \usepackage{listings}
-\usepackage{verbatim}
+%\usepackage{verbatim}
 
-\usepackage{xcolor}
 \usepackage{bera}
 \usepackage{caption}
 \captionsetup{%
@@ -326,49 +327,64 @@ La commande usepackage spécifie l'utilisation d'un package.
 
 Les packages les plus courants :
 
-%http://www.tuteurs.ens.fr/logiciels/latex/manuel.html
-babel : Babel est un package qui permet de générer des documents en plusieurs langues.
-%http://en.wikibooks.org/wiki/LaTeX/Xy-pic
-xy : xy is a special package for drawing diagrams.
-%http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf
-%http://www.texample.net/tikz/examples/
-tikz : 
-
    \begin{itemize}
-    \item doc
-    \item tikz
-    \item picturex
-    \item ifthen
-    \item latexsym
-    \item makeidx
-    \item syntonly
-    \item inputenc
     
     \item babel
+    \item tikz
     \item xy
     \item amsthm
     \item amssymb
-    
-    \item tikz
     \item graphicx
    \end{itemize}
 }
 
+%http://www.tuteurs.ens.fr/logiciels/latex/manuel.html
 \subsection{Babel}
 \frame[containsverbatim]{
 \frametitle{Babel}
+Babel est un package qui permet de générer des documents en plusieurs langues.
 \begin{LTXexample}
+\selectlanguage{turkish}
+Bu T{\"{u}}rk\c cedir,
+
+\selectlanguage{francais}
+Et c'est du fran\c cais
 \end{LTXexample}
 }
 
+%http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf
+%http://www.texample.net/tikz/examples/
 \subsection{Tikz}
 \frame[containsverbatim]{
 \frametitle{Tikz}
+TikZ permet de dessiner des schémas.
+
 \begin{LTXexample}
 \begin{tikzpicture}
 \draw (0,0) circle (1) ;
 \end{tikzpicture}
 \end{LTXexample}
+
+Remarque : il est aisé de générer des schémas TikZ avec Inkscape.
 }
+
+%http://en.wikibooks.org/wiki/LaTeX/Xy-pic
+%xy : xy is a special package for drawing diagrams.
+\subsection{xy}
+\frame[containsverbatim]{
+\frametitle{xy}
+xy permet d'afficher des matrices.
+\begin{LTXexample}
+\begin{displaymath}
+    \xymatrix{ A \ar[r] & B \ar[d] \\
+               D \ar[u] & C \ar[l] }
+\end{displaymath}
+\end{LTXexample}
+}
+
+
+%    \item amsthm
+%    \item amssymb
+%    \item graphicx
 
 \end{document}
