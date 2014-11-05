@@ -151,6 +151,7 @@ Le nombre       d'espaces n'est pas important.
 \end{LTXexample}
 
 \begin{LTXexample}
+Un paragraphe d{\'e}bute ici.
 Une ligne vide apparait.
 
 Un nouveau paragraphe commence.
@@ -376,7 +377,7 @@ Remarque : il est aisé de générer des schémas TikZ avec Inkscape.
 \subsection{xy}
 \frame[containsverbatim]{
 \frametitle{xy}
-xy permet d'afficher des matrices.
+xy permet d'afficher des diagrammes.
 \begin{LTXexample}
 \begin{displaymath}
     \xymatrix{ A \ar[r] & B \ar[d] \\
@@ -387,6 +388,22 @@ xy permet d'afficher des matrices.
 Pour en savoir plus : 
 
 http://math.arizona.edu/~swig/documentation/xypic/Xypic.pdf
+}
+
+\subsection{amsmath}
+\frame[containsverbatim]{
+\frametitle{amsmath}
+amsmath fournit de nombreuses fonctionnalités pour afficher des équations ou des structures mathématiques.
+\begin{LTXexample}
+\begin{align}
+a_1& =b_1+c_1\\
+a_2& =b_2+c_2-d_2+e_2
+\end{align}
+\end{LTXexample}
+
+Pour en savoir plus : 
+
+http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf
 }
 
 \subsection{amsthm}
@@ -406,6 +423,18 @@ http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/ams
 }
 
 %    \item amssymb
+\subsection{amssymb}
+\frame[containsverbatim]{
+\frametitle{amssymb}
+amssymb étend la liste des symboles.
+\begin{LTXexample}
+%\barwedge
+\end{LTXexample}
+
+Pour en savoir plus : 
+
+http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf
+}
 %    \item graphicx
 
 \end{document}
