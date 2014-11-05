@@ -1,0 +1,84 @@
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{xcolor}
+
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{showexpl}
+
+\lstloadlanguages{[LaTeX]Tex} 
+\lstset{% 
+    basicstyle=\ttfamily\small, 
+    commentstyle=\itshape\ttfamily\small, 
+    showspaces=false, 
+    showstringspaces=false, 
+    breaklines=true, 
+    breakautoindent=true, 
+    captionpos=t 
+} 
+
+\usetheme{Hannover}
+
+\newtheorem{defi}{Définition}
+\newtheorem{thm}{Théorème}
+
+\title{Introduction au \LaTeX}
+\author{Charles Martin}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\setcounter{tocdepth}{1}
+%\begin{frame}{Programme}
+% \tableofcontents[pausesections]
+%\end{frame}
+
+\section{\TeX}	
+\subsection{Introduction}
+\begin{frame}{\TeX}
+  Le moteur derrière \LaTeX est \TeX .
+  
+  \TeX a été crée en 1978 par Donald Knuth.
+  \begin{block}{Les objectifs :}    
+   \begin{itemize}
+    \item Permettre d’écrire des livres de qualité avec un minimum d’effort
+    \item Fournir un système qui donnera toujours le même résultat, maintenant et à l’avenir.
+   \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Syntaxe}
+\begin{frame}{Hello World}
+	Exemple de Hello World en \TeX :
+    \lstinputlisting{Sources/HelloWorldTex.tex}
+\end{frame}
+
+\section{\LaTeX}
+\subsection{Introduction}
+\begin{frame}{\LaTeX}
+  \LaTeX a été crée en 1980 par Leslie Lamport.
+  \begin{block}{Les objectifs :}    
+   \begin{itemize}
+    \item Fournir un language de haut niveau.
+    \item Utiliser la puissance de TeX.
+   \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Syntaxe}
+
+\begin{frame}{Hello World}
+	Exemple de Hello World en \LaTeX :
+    \lstinputlisting{Sources/HelloWorld.tex}
+\end{frame}
+
+
+\begin{frame}{Les espaces}
+\end{frame}
+\end{document}

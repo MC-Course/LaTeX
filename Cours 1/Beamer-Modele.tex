@@ -1,0 +1,123 @@
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+
+\usepackage{amssymb,amsthm,amsmath}
+
+\usepackage{xcolor}
+
+\usetheme{Warsaw}
+
+\newtheorem{defi}{Définition}
+\newtheorem{thm}{Théorème}
+
+\title{Exemple de présentation Beamer}
+\author{LM204}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+\setcounter{tocdepth}{1}
+\begin{frame}{Programme}
+ \tableofcontents[pausesections]
+\end{frame}
+
+\section{Introduction générale}
+
+\begin{frame}{Le problème de base}
+  On doit présenter un certain résultat lors d'une conférence.
+  \pause
+  \begin{block}{Cahier des charges}
+    La présentation doit \^etre:
+   \begin{itemize}
+    \item claire
+    \item concise
+    \item vidéo-projetée
+   \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{La solution}
+  \pause
+  \begin{center}
+   \Huge Beamer!
+  \end{center}
+\end{frame}
+
+\section{Le résultat}
+
+\begin{frame}
+ \tableofcontents[currentsection]
+\end{frame}
+
+\subsection{Modèle}
+
+\begin{frame}{Où l'on décrit le modèle}
+ Sans fioritures.
+ \pause
+ 
+ Sans doutes quelques définitions?
+\end{frame}
+
+\begin{frame}{Où l'on décrit le modèle}
+ \begin{defi}
+  On définit ici l'objet.
+ \end{defi}
+\end{frame}
+
+\subsection{Théorème}
+
+\begin{frame}{Le résultat}
+  \begin{thm}[principe fondamental de notre travail]
+   \'Enoncé du théorème
+  \end{thm}
+  \pause
+  \begin{proof}
+   La preuve du résultat:\pause
+   \begin{enumerate}[<+->]
+    \item en
+    \item trois
+    \item étapes \qedhere
+   \end{enumerate}
+  \end{proof}
+\end{frame}
+
+\section{Pour aller plus loin}
+
+\begin{frame}
+ \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Amusons-nous}
+  \alt<11-12>{
+  \begin{alertblock}{STOP!}
+   \invisible<11>{Attention à ne pas trop en faire!}
+  \end{alertblock}
+  }{
+  Beamer permet de régler l'apparition des éléments de la diapositive de plusieurs façons:
+  \visible<2-5,10>{
+  \begin{itemize}
+   \item<2-> dans
+   \item<4-> n'importe quel
+   \item<3-> \only<3>{l' }ordre.
+  \end{itemize}
+  }
+  \uncover<5->{
+  \visible<9->{ou m\^eme avant!}
+  \begin{enumerate}
+   \item en les mettant \textbf<5>{en gras},
+   \item en \textcolor<6>{blue}{couleur},
+   \item<alert@7> ou en valeur\alt<8-9>{,}{.}
+   \item<8-9> pendant un court laps de temps.
+  \end{enumerate}
+  }
+  \visible<10>{Et (tout?) réafficher!}
+  }
+\end{frame}
+
+\end{document}
