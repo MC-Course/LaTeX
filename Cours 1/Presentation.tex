@@ -38,6 +38,16 @@
     breakautoindent=true, 
     captionpos=t 
 } 
+\lstset{%
+    %explpreset below will affect LTX only.
+    explpreset={%
+                            language={[LaTeX]TeX},
+                            captionpos=t,
+                            aboveskip=2\fboxsep,                        
+                            pos=b,
+                            vsep=\fboxsep%vertical space between formatted and input.
+                         }%
+}
 
 \usetheme{Hannover}
 
@@ -90,19 +100,60 @@
 
 \subsection{Syntaxe}
 
-\begin{frame}{Hello World}
-	Exemple de Hello World en \LaTeX :
-    \lstinputlisting{Sources/HelloWorld.tex}
-\end{frame}
-
 \frame[containsverbatim]{
-\frametitle{Les espaces}
+\frametitle{Hello World}
+Exemple de Hello World en \LaTeX :
 \begin{LTXexample}
-Que vous utilisiez un ou plusieurs       espaces, cela n'est pas significatif.
-
-Un ligne vide commence un nouveau paragraphe.
+\documentclass{article}
+\title{Cours de LaTeX}
+\author{Charles Martin}
+\date{Novembre 2014}
+\begin{document}
+Hello, World !
+\end{document}
 \end{LTXexample}
 }
 
+\frame[containsverbatim]{
+\frametitle{Les espaces}
+
+\begin{LTXexample}
+Le nombre       d'espaces n'est pas important.
+\end{LTXexample}
+
+\begin{LTXexample}
+Avec une ligne vide commence,
+
+ un nouveau paragraphe.
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{Les caractères spéciaux}
+Les symboles suivants sont des caractères réservés :
+
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+
+Pour les utiliser, placez un \textbackslash {} devant:
+
+\begin{LTXexample}
+\# \$ \% \^{} \& \_ \{ \} \~{}
+\textbackslash
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{Les commandes}
+Une commande commence par un \textbackslash{} et a un nom constitué de lettres uniquement.
+
+\textbackslash command[parametre optionnel]\{parametre\}
+
+\begin{LTXexample}
+Vous pouvez \textsl{compter} sur moi!
+\end{LTXexample}
+
+\begin{LTXexample}
+\end{LTXexample}
+}
 
 \end{document}
