@@ -209,13 +209,26 @@ Ce message est visible.
 \frame[containsverbatim]{
 \frametitle{La structure du fichier}
 Lorsque \LaTeX{} traite un fichier, il s'attend à suivre une certaine structure.
-Exemple de structure simple :
 
+Cette structure est composée :
+
+   \begin{itemize}
+    \item du type de document
+    \item du titre
+    \item de l'auteur
+    \item de la date
+    \item du contenu
+   \end{itemize}
+}
+
+\frame[containsverbatim]{
+\frametitle{La structure d'un article}
+Exemple de structure d'un article :
 \begin{LTXexample}
 %On specifie le type de document, ici, un article
 \documentclass{article} 
 %On specifie le titre de l'article
-\title{Cours de LaTeX} 
+\title{Document LaTeX} 
 %On specifie l'auteur
 \author{Charles Martin} 
 %On specifie la date
@@ -225,6 +238,31 @@ Exemple de structure simple :
 %On trouvera ici le contenu
 Contenu du document.
 %Le document se termine ici 
+\end{document} 
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{La structure d'une pr\'esentation type powerpoint}
+Exemple de structure d'un article :
+\begin{LTXexample}
+%On specifie le type de document, ici, un article
+\documentclass{beamer} 
+%On choisit un theme
+\usetheme{Warsaw}
+%On specifie le titre de l'article
+\title{Pr\'esentation LaTeX} 
+%On specifie l'auteur
+\author{Charles Martin} 
+%On specifie la date
+\date{Novembre 2014} 
+%Le document commence ici
+\begin{document} 
+%\begin{frame}
+%\frametitle{Titre}
+%\framesubtitle{Sous-Titre}
+%Contenu
+%\end{frame}
 \end{document} 
 \end{LTXexample}
 }
