@@ -168,11 +168,20 @@ Les symboles suivants sont des caractères réservés :
 
 \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
 
-Pour les utiliser, placez un \textbackslash {} devant:
+Pour les afficher dans votre document, placez un \textbackslash {} devant:
 
 \begin{LTXexample}
 \# \$ \% \^{} \& \_ \{ \} \~{}
 \textbackslash
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{Les formules math{\'e}matiques}
+Les formules mat{\'e}matiques sont sont plac{\'e}es entre \$ et \$.
+
+\begin{LTXexample}
+$a^2 + b^2 = c^2$
 \end{LTXexample}
 }
 
@@ -402,14 +411,13 @@ Un exemple plus complexe :
 \frame[containsverbatim]{
 \frametitle{xy}
 Un dernier exemple :
-%\begin{LTXexample}
-%  \xymatrix @!0 @R=2pc @C=3pc {
-%    A \ar[rr] \ar[rd] \ar[dd] && B \ar[dd] \\
-%    & C \ar[ru] \ar[dd] \\
-%    A' \ar[rr] |!{[ur];[dr]}\hole \ar[rd] && B' \\
-%    & C' \ar[ru] }
-%
-%\end{LTXexample}
+\begin{LTXexample}
+\xymatrix{
+  A \ar[r]^u_d \ar[rd]^u_d &
+  B \ar[d]^u_d &
+  C \ar[l]^u_d \ar[ld]^u_d\\
+  &D}
+\end{LTXexample}
 
 Pour en savoir plus : 
 
@@ -429,7 +437,27 @@ a_2& =b_2+c_2-d_2+e_2
 
 Pour en savoir plus : 
 
-http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf
+http://mirror.isoc.org.il/pub/ctan/macros/latex/
+
+required/amslatex/amscls/doc/amsthdoc.pdf
+}
+
+\frame[containsverbatim]{
+\frametitle{amsmath}
+amsmath permet également de générer des matrices.
+\begin{LTXexample}
+$A_{m,n} =
+ \begin{pmatrix}
+  a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+  a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+ \end{pmatrix}$
+\end{LTXexample}
+
+Pour en savoir plus : 
+
+http://en.wikibooks.org/wiki/LaTeX/Mathematics
 }
 
 \subsection{amsthm}
@@ -445,22 +473,23 @@ Ceci est mon th{\'e}or{\`e}me.
 
 Pour en savoir plus : 
 
-http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf
+http://mirror.isoc.org.il/pub/ctan/macros/latex/
+required/amslatex/amscls/doc/amsthdoc.pdf
 }
 
-%    \item amssymb
-\subsection{amssymb}
+\subsection{graphicx}
 \frame[containsverbatim]{
-\frametitle{amssymb}
-amssymb étend la liste des symboles.
+\frametitle{graphicx}
+graphicx étend la liste des symboles.
 \begin{LTXexample}
-%\barwedge
+\begin{figure}[position]
+   \includegraphics[scale=0.10]{./Images/latex.jpg}
+\end{figure}
 \end{LTXexample}
 
 Pour en savoir plus : 
 
-http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf
+http://fr.wikibooks.org/wiki/LaTeX/Inclure\_des\_images
 }
-%    \item graphicx
 
 \end{document}
