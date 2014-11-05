@@ -3,9 +3,10 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
+\usepackage[francais, turkish]{babel}
 \usepackage{amssymb,amsthm,amsmath}
 \usepackage{xcolor}
+\usepackage{tikz}
 
 \usepackage{listings}
 \usepackage{verbatim}
@@ -312,7 +313,9 @@ Contenu
 \end{LTXexample}
 }
 
-\subsubsection{Les packages}
+\section{Packages}
+
+\subsection{Packages courants}
 
 \frame[containsverbatim]{
 \frametitle{Les packages}
@@ -322,6 +325,15 @@ La commande usepackage spécifie l'utilisation d'un package.
 \textbackslash usepackage[options]{nom du package}
 
 Les packages les plus courants :
+
+%http://www.tuteurs.ens.fr/logiciels/latex/manuel.html
+babel : Babel est un package qui permet de générer des documents en plusieurs langues.
+%http://en.wikibooks.org/wiki/LaTeX/Xy-pic
+xy : xy is a special package for drawing diagrams.
+%http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf
+%http://www.texample.net/tikz/examples/
+tikz : 
+
    \begin{itemize}
     \item doc
     \item tikz
@@ -331,9 +343,32 @@ Les packages les plus courants :
     \item makeidx
     \item syntonly
     \item inputenc
+    
+    \item babel
+    \item xy
+    \item amsthm
+    \item amssymb
+    
+    \item tikz
+    \item graphicx
    \end{itemize}
 }
 
-\section{Packages utiles}
+\subsection{Babel}
+\frame[containsverbatim]{
+\frametitle{Babel}
+\begin{LTXexample}
+\end{LTXexample}
+}
+
+\subsection{Tikz}
+\frame[containsverbatim]{
+\frametitle{Tikz}
+\begin{LTXexample}
+\begin{tikzpicture}
+\draw (0,0) circle (1) ;
+\end{tikzpicture}
+\end{LTXexample}
+}
 
 \end{document}
