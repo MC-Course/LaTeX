@@ -122,9 +122,9 @@ Le nombre       d'espaces n'est pas important.
 \end{LTXexample}
 
 \begin{LTXexample}
-Avec une ligne vide commence,
+Une ligne vide apparait.
 
- un nouveau paragraphe.
+Un nouveau paragraphe commence.
 \end{LTXexample}
 }
 
@@ -153,7 +153,42 @@ Vous pouvez \textsl{compter} sur moi!
 \end{LTXexample}
 
 \begin{LTXexample}
+Vous pouvez commencer une nouvelle ligne juste ici ! \newline Merci!
 \end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{Les commentaires}
+Les commentaires commencent par le caractère \%.
+Un commentaire ne sera jamais affiché, et servira généralement à ajouter des remarques sur le code, voir à désactiver du code.
+\begin{LTXexample}
+Ce message est visible.
+%Mais pas ce message.
+%\textsl{Ni cette commande.}
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{La structure du fichier}
+Lorsque \LaTeX{} traite un fichier, il s'attend à suivre une certaine structure.
+Chaque source \LaTeX{} commence avec la commande :
+\newline
+\newline
+\textbackslash documentclass \{ \}
+\newline
+\newline
+On spécifie ici quel type de document l'on va écrire.
+
+%\begin{LTXexample}
+%\documentclass{article} %On va écrire un article
+%\title{Cours de LaTeX} %On spécifie le titre
+%\author{Charles Martin} %On spécifie l'auteur
+%\date{Novembre 2014} %On spécifie la date
+%\begin{document} %Le document commence ici
+%Contenu %On trouvera ici le contenu
+%\end{document} %Le document se termine ici
+%\end{LTXexample}
+
 }
 
 \end{document}
