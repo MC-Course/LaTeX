@@ -384,6 +384,30 @@ xy permet d'afficher des diagrammes.
                D \ar[u] & C \ar[l] }
 \end{displaymath}
 \end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{xy}
+Un exemple plus complexe :
+\begin{LTXexample}
+\xymatrix{
+    A \ar@{^{(}->}[r]^f \ar@{.>}[d]_\phi \ar@{=>}[rd] & B \ar@{=}[d]^\psi \\
+    C \ar@{->>}[r]_g & D
+  }
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{xy}
+Un dernier exemple :
+%\begin{LTXexample}
+%  \xymatrix @!0 @R=2pc @C=3pc {
+%    A \ar[rr] \ar[rd] \ar[dd] && B \ar[dd] \\
+%    & C \ar[ru] \ar[dd] \\
+%    A' \ar[rr] |!{[ur];[dr]}\hole \ar[rd] && B' \\
+%    & C' \ar[ru] }
+%
+%\end{LTXexample}
 
 Pour en savoir plus : 
 
