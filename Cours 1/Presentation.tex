@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc}
 %\usepackage[T1]{fontenc}
 \usepackage[francais, turkish]{babel}
-%\usepackage{amssymb,amsthm,amsmath}
+\usepackage{amssymb,amsthm,amsmath}
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage[all]{xy}
@@ -325,13 +325,12 @@ La commande usepackage spécifie l'utilisation d'un package.
 
 \textbackslash usepackage[options]{nom du package}
 
-Les packages les plus courants :
+Quelques packages utilisé couramment :
 
    \begin{itemize}
-    
-    \item babel
-    \item tikz
-    \item xy
+    \item \textbackslash usepackage[francais, turkish]\{babel\}
+    \item \textbackslash usepackage\{tikz\}
+    \item \textbackslash usepackage[all]\{xy\}
     \item amsthm
     \item amssymb
     \item graphicx
@@ -350,6 +349,10 @@ Bu T{\"{u}}rk\c cedir,
 \selectlanguage{francais}
 Et c'est du fran\c cais
 \end{LTXexample}
+
+En savoir plus :
+
+http://www.tuteurs.ens.fr/logiciels/latex/manuel.html
 }
 
 %http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf
@@ -380,10 +383,28 @@ xy permet d'afficher des matrices.
                D \ar[u] & C \ar[l] }
 \end{displaymath}
 \end{LTXexample}
+
+Pour en savoir plus : 
+
+http://math.arizona.edu/~swig/documentation/xypic/Xypic.pdf
 }
 
+\subsection{amsthm}
+\frame[containsverbatim]{
+\frametitle{amsthm}
+amsthm étend la fonction \textbackslash newtheorem.
+\begin{LTXexample}
+\newtheorem{lem}{Th{\'e}or{\`e}me}
+\begin{lem} 
+Ceci est mon th{\'e}or{\`e}me. 
+\end{lem}
+\end{LTXexample}
 
-%    \item amsthm
+Pour en savoir plus : 
+
+http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf
+}
+
 %    \item amssymb
 %    \item graphicx
 
