@@ -40,7 +40,7 @@
 } 
 \lstset{%
     breaklines=true,%default : false 
-  breakindent=10pt,%default: 20pt 
+    breakindent=10pt,%default: 20pt 
     linewidth=\linewidth,%default : \linewidth,
     basicstyle=\ttfamily\tiny,% cannot take arguments
     keywordstyle=\color{Blue}\sffamily\bfseries,                                
@@ -133,9 +133,6 @@
 Exemple de Hello World en \LaTeX :
 \begin{LTXexample}
 \documentclass{article}
-\title{Cours de LaTeX}
-\author{Charles Martin}
-\date{Novembre 2014}
 \begin{document}
 Hello, World !
 \end{document}
@@ -266,5 +263,77 @@ Exemple de structure d'un article :
 \end{document} 
 \end{LTXexample}
 }
+
+\subsubsection{Le type de document}
+
+\frame[containsverbatim]{
+\frametitle{Le type du document}
+
+La commande documentclass spécifie le type de document et son mode de rendu.
+Il est possible de spécifier le rendu d'un document lorsque l'on spécifie le type de document :
+
+\textbackslash documentclass[options]\{type\}
+
+Les types de document :
+   \begin{itemize}
+    \item article : articles scientifiques, présentations, rapports courts, etc.
+    \item proc : procédures
+    \item minimal : minimaliste
+    \item report : longs rapports
+    \item book : livres
+    \item beamer : présentations type powerpoint.
+   \end{itemize}
+}
+
+\frame[containsverbatim]{
+\frametitle{Le type du document}
+
+\textbackslash documentclass[options]\{type\}
+
+Les options du document :
+   \begin{itemize}
+    \item 10pt, 11pt, 12pt : taille de la police de caractères
+    \item a4paper, letterpaper, ... : format du papier
+    \item lanscape : orientation paysage
+    \item etc.   
+   \end{itemize}
+}
+
+\frame[containsverbatim]{
+\frametitle{Le type du document}
+
+Exemple :
+
+\begin{LTXexample}
+\documentclass[11pt,a4paper,fleqn,notitlepage,twocolumn]{article}
+\begin{document}
+Contenu
+\end{document}
+\end{LTXexample}
+}
+
+\subsubsection{Les packages}
+
+\frame[containsverbatim]{
+\frametitle{Les packages}
+
+La commande usepackage spécifie l'utilisation d'un package.
+
+\textbackslash usepackage[options]{nom du package}
+
+Les packages les plus courants :
+   \begin{itemize}
+    \item doc
+    \item tikz
+    \item picturex
+    \item ifthen
+    \item latexsym
+    \item makeidx
+    \item syntonly
+    \item inputenc
+   \end{itemize}
+}
+
+\section{Packages utiles}
 
 \end{document}
