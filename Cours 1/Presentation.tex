@@ -115,6 +115,7 @@
 \begin{frame}{\TeX}
   Le moteur derrière \LaTeX{} est \TeX{} .
   
+  
   \TeX{} a été crée en 1978 par Donald Knuth.
   \begin{block}{Les objectifs de \TeX :}    
    \begin{itemize}
@@ -142,6 +143,74 @@
   \end{block}
 \end{frame}
 
+\subsection{Pourquoi utiliser \LaTeX ?}
+\begin{frame}{Pour quelles raisons choisir \LaTeX ?}
+	\begin{block}{Pourquoi utiliser \LaTeX{} plutôt qu'un outil comme Word ?}
+		\begin{itemize}
+			\item Pour se concentrer sur le contenu. \LaTeX{} s'occupe de la mise forme.
+			\item Pour produire des documents de qualité professionnelle.
+			\item Pour produire des documents qui produiront toujours le même contenu.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Que vas-t-on faire avec \LaTeX ?}
+	\begin{block}{Quelle sont les utilisations possibles de \LaTeX{} ?}
+		\begin{itemize}
+			\item Rédiger un rapport de stage, un mémoire, une thèse,
+			\item Rédiger document de présentation type powerpoint,
+			\item Écrire un livre, une revue, etc.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Les outils}
+\begin{frame}{Installer \LaTeX}
+	\begin{block}{Comment installer \LaTeX{} ?}
+		\begin{itemize}
+			\item Sur Windows, installez MikTeX,
+			\item sur Mac, installez MacTeX,
+			\item sur Linux, installez le paquet textlive-full.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Les {\'e}diteurs \LaTeX{}}
+	\begin{block}{Les {\'e}diteurs \LaTeX{}}
+		Il existe de nombreux {\'e}diteurs \LaTeX.
+		
+		Parmi les plus connus :
+		\begin{itemize}
+			\item TexMaker
+			\item TeXstudio
+			\item Gummi
+			\item TeXnicCenter
+		\end{itemize}
+		
+		Ils sont souvent multi-plateforme.
+	\end{block}
+\end{frame}
+
+\subsection{Les fichiers}
+\begin{frame}{Les fichiers}
+	
+	Génération d'une publication via \LaTeX:
+	\begin{displaymath}
+	\xymatrix{ 
+		.tex \ar@{-->}[rd] & & & .pdf  \\
+		.tex \ar@{-->}[r] & .tex \ar[r] & .dvi \ar@{=>}[ru] \ar@{=>}[rd]  \\
+		.bib \ar@{-->}[ru] & & & .ps 
+	}
+	\end{displaymath}
+	
+	\begin{tabular}{|l|l|}
+.tex & Contient les source \\
+.dvi & Fichier de compilation intermédiaire \\
+.pdf / .ps & Fichier publié à partir du fichier dvi \\
+.bib / .ps & Contient la bibliographie
+	\end{tabular}
+\end{frame}
+
 \subsection{Syntaxe}
 \subsubsection{Hello World}
 \frame[containsverbatim]{
@@ -153,6 +222,28 @@ Exemple de Hello World en \LaTeX :
 Hello, World !
 \end{document}
 \end{LTXexample}
+}
+
+\frame[containsverbatim]{
+	\frametitle{D{\'e}coupe d'un document}
+	Un document \LaTeX{} sera découpé en partie de la manière suivante :
+	
+	\begin{lstlisting}
+		\part{Partie 1}
+		\chapter{Chapitre 1}
+		\section{Section 1}
+		\subsection{Sous-Section 1}
+		\subsubsection{Sous-Sous-Section 1}
+		\paragraph{Paragraphe 1}
+		\subparagraph{Sous-Paragraphe 1}
+	\end{lstlisting}
+	
+	La numérotation est automatique. Il est possible de la désactiver en rajouter *.
+	
+	\begin{lstlisting}
+	\section{Section avec numerotation}
+	\section*{Section sans numerotation}
+	\end{lstlisting}
 }
 
 \subsubsection{Les espaces}
