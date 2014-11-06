@@ -1,0 +1,522 @@
+%TODO : Changer la section des packages en section par fonctionnalité (ajouter une image, un schéma, etc.)
+
+
+%TODO : Compléter en se basant sur les cours tels que :
+%http://pbil.univ-lyon1.fr/members/mbailly/Comm_Scientifique/M1/cours_latex.pdf
+%http://pbil.univ-lyon1.fr/members/mbailly/Comm_Scientifique/
+%http://tex.loria.fr/general/apprends-latex.pdf
+
+%http://www.math.ens.fr/~millien/tdlatex/poly.pdf
+
+%Qui suis-je ?
+%Latex, les éléments clés
+%Latex, les packages
+
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass{beamer}
+\usepackage{etex}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage[francais, turkish]{babel}
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[all]{xy}
+
+\usepackage{listings}
+%\usepackage{verbatim}
+
+\usepackage{bera}
+\usepackage{caption}
+\captionsetup{%
+   margin=0em,
+   font={scriptsize,rm},
+   labelfont={color=Maroon,bf},
+   justification=justified,%default: RaggedRight. Other options: justified, centering
+   labelsep=quad%default:colon. Options: period, space, quad, newline
+}
+\usepackage{showexpl}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\SX@codeInput}{xleftmargin=0pt,xrightmargin=0pt}{}
+  {\typeout{***Successfully patched \protect\SX@codeInput***}}
+  {\typeout{***ERROR! Failed to patch \protect\SX@codeInput***}}
+\makeatother
+
+\lstloadlanguages{[LaTeX]Tex} 
+\lstset{% 
+    basicstyle=\ttfamily\small, 
+    commentstyle=\itshape\ttfamily\small, 
+    showspaces=false, 
+    showstringspaces=false, 
+    breaklines=true, 
+    breakautoindent=true, 
+    captionpos=t 
+} 
+\lstset{%
+    breaklines=true,%default : false 
+    breakindent=10pt,%default: 20pt 
+    linewidth=\linewidth,%default : \linewidth,
+    basicstyle=\ttfamily\tiny,% cannot take arguments
+    keywordstyle=\color{Blue}\sffamily\bfseries,                                
+    identifierstyle=\color{Black},                                      
+    commentstyle=\color{OliveGreen}\itshape,                                    
+    stringstyle=\rmfamily,                                                      
+    showspaces=false,%default false
+    showstringspaces=false,%default: true
+    backgroundcolor=\color{Yellow!30},
+    frame=single,%default frame=none 
+    rulecolor=\color{Red},  
+    % the following must be defined to make hacking work.
+    framerule=0.4pt,%expand outward 
+    framesep=3pt,%expand outward
+    xleftmargin=3.4pt,%to make the frame fits in the text area. 
+    xrightmargin=3.4pt,%to make the frame fits in the text area. 
+    tabsize=2%,%default :8 only influence the lstlisting and lstinline.
+}
+\lstset{%
+    %explpreset below will affect LTX only.
+    explpreset={%
+                            language={[LaTeX]TeX},
+                            captionpos=t,
+                            aboveskip=2\fboxsep,                        
+                            pos=b,
+                            vsep=\fboxsep%vertical space between formatted and input.
+                         }%
+}
+
+\usetheme{Hannover}
+
+\newtheorem{defi}{Définition}
+\newtheorem{thm}{Théorème}
+
+\title{Introduction au \LaTeX}
+\author{Charles Martin}
+
+\begin{document}
+
+\selectlanguage{francais}
+
+\definecolor{Red}{RGB}{255,0,0}
+\definecolor{Grey}{RGB}{205,201,201}
+\definecolor{Yellow}{RGB}{255,255,0}
+\definecolor{Blue}{RGB}{50,50,150}
+\definecolor{Black}{RGB}{0,0,0}
+\definecolor{OliveGreen}{RGB}{0,100,0}
+
+\frame{
+	\titlepage
+	Inspiré du cours de Marc Bailly-Bechet
+}
+
+\section{Introduction}	
+\begin{frame}{Introduction}
+	
+  \includegraphics[scale=0.20]{./Images/donald_knuth.jpg}
+  
+  \TeX{} a été crée en 1978 par Donald Knuth. 
+  
+  \begin{block}{Les objectifs de \TeX :}    
+   \begin{itemize}
+    \item Permettre d’écrire des livres de qualité avec un minimum d’effort
+    \item Fournir un système qui donnera toujours le même résultat, maintenant et à l’avenir.
+   \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Syntaxe}
+\begin{frame}{Hello World}
+	Exemple de Hello World en \TeX{} :
+    \lstinputlisting{Sources/HelloWorldTex.tex}
+\end{frame}
+
+\section{\LaTeX}
+\subsection{Introduction}
+\begin{frame}{\LaTeX}
+  \includegraphics[scale=2]{./Images/leslie_lamport.jpg}
+  
+  \LaTeX{} a été crée en 1980 par Leslie Lamport.
+  \begin{block}{Les objectifs de \LaTeX :}    
+   \begin{itemize}
+    \item Fournir un language de haut niveau.
+    \item Utiliser la puissance de \TeX{}.
+   \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Syntaxe}
+\subsubsection{Hello World}
+\frame[containsverbatim]{
+\frametitle{Hello World}
+Exemple de Hello World en \LaTeX :
+\begin{LTXexample}
+\documentclass{article}
+\begin{document}
+Hello, World !
+\end{document}
+\end{LTXexample}
+}
+
+\subsubsection{Les espaces}
+\frame[containsverbatim]{
+\frametitle{Les espaces}
+\begin{LTXexample}
+Le nombre       d'espaces n'est pas important.
+\end{LTXexample}
+\begin{LTXexample}
+Un paragraphe d{\'e}bute ici.
+Une ligne vide apparait.
+
+Un nouveau paragraphe commence.
+\end{LTXexample}
+}
+
+\subsubsection{Les caractères spéciaux}
+\frame[containsverbatim]{
+\frametitle{Les caractères spéciaux}
+Les symboles suivants sont des caractères réservés :
+
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+
+Pour les afficher dans votre document, placez un \textbackslash {} devant:
+
+\begin{LTXexample}
+\# \$ \% \^{} \& \_ \{ \} \~{}
+\textbackslash
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{Les formules math{\'e}matiques}
+Les formules mat{\'e}matiques sont plac{\'e}es entre \$ et \$.
+
+\begin{LTXexample}
+$a^2 + b^2 = c^2$
+\end{LTXexample}
+}
+
+\subsubsection{Les commandes}
+
+\frame[containsverbatim]{
+\frametitle{Les commandes}
+Une commande commence par un \textbackslash{} et a un nom constitué de lettres uniquement.
+
+\textbackslash command[parametre optionnel]\{parametre\}
+
+\begin{LTXexample}
+Vous pouvez \textsl{compter} sur moi!
+\end{LTXexample}
+
+\begin{LTXexample}
+Vous pouvez commencer une nouvelle ligne juste ici ! \newline Merci!
+\end{LTXexample}
+}
+
+\subsubsection{Les commentaires}
+
+\frame[containsverbatim]{
+\frametitle{Les commentaires}
+Les commentaires commencent par le caractère \%.
+Un commentaire ne sera jamais affiché, et servira généralement à ajouter des remarques sur le code, voir à désactiver du code.
+\begin{LTXexample}
+Ce message est visible.
+%Mais pas ce message.
+%\textsl{Ni cette commande.}
+\end{LTXexample}
+}
+
+\subsubsection{La structure du fichier}
+\frame[containsverbatim]{
+\frametitle{La structure du fichier}
+Lorsque \LaTeX{} traite un fichier, il s'attend à suivre une certaine structure.
+
+Cette structure est composée :
+
+   \begin{itemize}
+    \item du type de document
+    \item du titre
+    \item de l'auteur
+    \item de la date
+    \item du contenu
+   \end{itemize}
+}
+
+\frame[containsverbatim]{
+\frametitle{La structure d'un article}
+Exemple de structure d'un article :
+\begin{LTXexample}
+%On specifie le type de document, ici, un article
+\documentclass{article} 
+%On specifie le titre de l'article
+\title{Document LaTeX} 
+%On specifie l'auteur
+\author{Charles Martin} 
+%On specifie la date
+\date{Novembre 2014} 
+%Le document commence ici
+\begin{document} 
+%On trouvera ici le contenu
+Contenu du document.
+%Le document se termine ici 
+\end{document} 
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{La structure d'une pr\'esentation type powerpoint}
+Exemple de structure d'un article :
+\begin{LTXexample}
+%On specifie le type de document, ici, un article
+\documentclass{beamer} 
+%On choisit un theme
+\usetheme{Warsaw}
+%On specifie le titre de l'article
+\title{Pr\'esentation LaTeX} 
+%On specifie l'auteur
+\author{Charles Martin} 
+%On specifie la date
+\date{Novembre 2014} 
+%Le document commence ici
+\begin{document} 
+%\begin{frame}
+%\frametitle{Titre}
+%\framesubtitle{Sous-Titre}
+%Contenu
+%\end{frame}
+\end{document} 
+\end{LTXexample}
+}
+
+\subsubsection{Le type de document}
+
+\frame[containsverbatim]{
+\frametitle{Le type du document}
+
+La commande documentclass spécifie le type de document et son mode de rendu.
+Il est possible de spécifier le rendu d'un document lorsque l'on spécifie le type de document :
+
+\textbackslash documentclass[options]\{type\}
+
+Les types de document :
+   \begin{itemize}
+    \item article : articles scientifiques, présentations, rapports courts, etc.
+    \item proc : procédures
+    \item minimal : minimaliste
+    \item report : longs rapports
+    \item book : livres
+    \item beamer : présentations type powerpoint.
+   \end{itemize}
+}
+
+\frame[containsverbatim]{
+\frametitle{Le type du document}
+
+\textbackslash documentclass[options]\{type\}
+
+Les options du document :
+   \begin{itemize}
+    \item 10pt, 11pt, 12pt : taille de la police de caractères
+    \item a4paper, letterpaper, ... : format du papier
+    \item lanscape : orientation paysage
+    \item etc.   
+   \end{itemize}
+}
+
+\frame[containsverbatim]{
+\frametitle{Le type du document}
+
+Exemple :
+
+\begin{LTXexample}
+\documentclass[11pt,a4paper,fleqn,notitlepage,twocolumn]{article}
+\begin{document}
+Contenu
+\end{document}
+\end{LTXexample}
+}
+
+\subsection{Les {\'e}diteurs}
+
+\subsubsection{Linux}
+
+\frame[containsverbatim]{
+	\frametitle{Gummi}
+}
+
+\subsubsection{Windows}
+
+\frame[containsverbatim]{
+	\frametitle{Texmaker}
+}
+
+\frame[containsverbatim]{
+	\frametitle{TeXstudio}
+}
+
+\subsubsection{Mac}
+
+\section{Packages}
+
+\subsection{Packages courants}
+
+\frame[containsverbatim]{
+\frametitle{Les packages}
+
+La commande usepackage spécifie l'utilisation d'un package.
+
+\textbackslash usepackage[options]{nom du package}
+
+Quelques packages utilisé couramment :
+
+   \begin{itemize}
+    \item \textbackslash usepackage[francais, turkish]\{babel\}
+    \item \textbackslash usepackage\{tikz\}
+    \item \textbackslash usepackage[all]\{xy\}
+    \item \textbackslash usepackage\{amsmath\}
+    \item \textbackslash usepackage\{graphicx\}
+   \end{itemize}
+}
+
+\subsection{Babel}
+\frame[containsverbatim]{
+\frametitle{Babel}
+Babel est un package qui permet de générer des documents en plusieurs langues.
+\begin{LTXexample}
+\selectlanguage{turkish}
+Bu T{\"{u}}rk\c cedir,
+
+\selectlanguage{francais}
+Et c'est du fran\c cais
+\end{LTXexample}
+
+En savoir plus :
+
+\url{http://www.tuteurs.ens.fr/logiciels/latex/manuel.html}
+}
+
+\subsection{Tikz}
+\frame[containsverbatim]{
+\frametitle{Tikz}
+TikZ permet de dessiner des schémas.
+
+\begin{LTXexample}
+\begin{tikzpicture}
+\draw (0,0) circle (1) ;
+\end{tikzpicture}
+\end{LTXexample}
+
+Remarque : il est aisé de générer des schémas TikZ avec Inkscape.
+
+En savoir plus :
+
+\url{http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf}
+
+\url{http://www.texample.net/tikz/examples/}
+}
+
+\subsection{xy}
+\frame[containsverbatim]{
+\frametitle{xy}
+xy permet d'afficher des diagrammes.
+\begin{LTXexample}
+\begin{displaymath}
+    \xymatrix{ A \ar[r] & B \ar[d] \\
+               D \ar[u] & C \ar[l] }
+\end{displaymath}
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{xy}
+Un exemple plus complexe :
+\begin{LTXexample}
+\xymatrix{
+    A \ar@{^{(}->}[r]^f \ar@{.>}[d]_\phi \ar@{=>}[rd] & B \ar@{=}[d]^\psi \\
+    C \ar@{->>}[r]_g & D
+  }
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{xy}
+Un dernier exemple :
+\begin{LTXexample}
+\xymatrix{
+  A \ar[r]^u_d \ar[rd]^u_d &
+  B \ar[d]^u_d &
+  C \ar[l]^u_d \ar[ld]^u_d\\
+  &D}
+\end{LTXexample}
+
+Pour en savoir plus : 
+
+\url{http://math.arizona.edu/~swig/documentation/xypic/Xypic.pdf}
+}
+
+\subsection{amsmath}
+\frame[containsverbatim]{
+\frametitle{amsmath}
+amsmath fournit de nombreuses fonctionnalités pour afficher des équations ou des structures mathématiques.
+\begin{LTXexample}
+\begin{align}
+a_1& =b_1+c_1\\
+a_2& =b_2+c_2-d_2+e_2
+\end{align}
+\end{LTXexample}
+
+Pour en savoir plus : 
+
+\url{http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf}
+}
+
+\frame[containsverbatim]{
+\frametitle{amsmath}
+amsmath permet également de générer des matrices.
+\begin{LTXexample}
+$A_{m,n} =
+ \begin{pmatrix}
+  a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+  a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+ \end{pmatrix}$
+\end{LTXexample}
+
+Pour en savoir plus : 
+
+\url{http://en.wikibooks.org/wiki/LaTeX/Mathematics}
+}
+
+\subsection{amsthm}
+\frame[containsverbatim]{
+\frametitle{amsthm}
+amsthm étend la fonction \textbackslash newtheorem.
+\begin{LTXexample}
+\newtheorem{lem}{Th{\'e}or{\`e}me}
+\begin{lem} 
+Ceci est mon th{\'e}or{\`e}me. 
+\end{lem}
+\end{LTXexample}
+
+Pour en savoir plus : 
+
+\url{http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf}
+}
+
+\subsection{graphicx}
+\frame[containsverbatim]{
+\frametitle{graphicx}
+graphicx permet d'afficher des images.
+\begin{LTXexample}
+\begin{figure}[position]
+   \includegraphics[scale=0.10]{./Images/latex.jpg}
+\end{figure}
+\end{LTXexample}
+
+Pour en savoir plus : 
+
+\url{http://fr.wikibooks.org/wiki/LaTeX/Inclure\_des\_images}
+}
+
+\end{document}
