@@ -21,6 +21,7 @@
 \usepackage[francais, turkish]{babel}
 \usepackage{amssymb,amsthm,amsmath}
 \usepackage{xcolor}
+\usepackage{color}
 \usepackage{tikz}
 \usepackage[all]{xy}
 
@@ -276,7 +277,11 @@ Hello, World !
 	Pensez à ajouter le bon package : \textbackslash usepackage\{color\}
 	
 	\begin{LTXexample}
-		
+		\color{blue}
+		Ce texte est bleu.
+		\color{black}
+		Ici, on utilise la couleur par d{\'e}faut.
+		Et l{\`a}, je met une \textcolor{red}{partie} du texte seulement en rouge.
 	\end{LTXexample}
 }
 
