@@ -17,7 +17,7 @@
 \usepackage{etex}
 
 \usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[francais, turkish]{babel}
 \usepackage{amssymb,amsthm,amsmath}
 \usepackage{xcolor}
@@ -213,7 +213,6 @@
 \end{frame}
 
 \subsection{Syntaxe}
-\subsubsection{Hello World}
 \frame[containsverbatim]{
 \frametitle{Hello World}
 Exemple de Hello World en \LaTeX :
@@ -226,17 +225,44 @@ Hello, World !
 }
 
 \frame[containsverbatim]{
+\frametitle{Les espaces}
+\begin{LTXexample}
+Le nombre       d'espaces n'est pas important.
+\end{LTXexample}
+\begin{LTXexample}
+Un paragraphe d{\'e}bute ici.
+Une ligne vide apparait.
+
+Un nouveau paragraphe commence.
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+\frametitle{Les caractères spéciaux}
+Les symboles suivants sont des caractères réservés :
+
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+
+Pour les afficher dans votre document, placez un \textbackslash {} devant:
+
+\begin{LTXexample}
+\# \$ \% \^{} \& \_ \{ \} \~{}
+\textbackslash
+\end{LTXexample}
+}
+
+\frame[containsverbatim]{
 	\frametitle{D{\'e}coupe d'un document}
 	Un document \LaTeX{} sera découpé en partie de la manière suivante :
 	
 	\begin{lstlisting}
-		\part{Partie 1}
-		\chapter{Chapitre 1}
-		\section{Section 1}
-		\subsection{Sous-Section 1}
-		\subsubsection{Sous-Sous-Section 1}
-		\paragraph{Paragraphe 1}
-		\subparagraph{Sous-Paragraphe 1}
+	\part{Partie 1}
+	\chapter{Chapitre 1}
+	\section{Section 1}
+	\subsection{Sous-Section 1}
+	\subsubsection{Sous-Sous-Section 1}
+	\paragraph{Paragraphe 1}
+	\subparagraph{Sous-Paragraphe 1}
 	\end{lstlisting}
 	
 	La numérotation est automatique. Il est possible de la désactiver en rajouter *.
@@ -254,7 +280,7 @@ Hello, World !
 	\textbackslash tiny, \textbackslash scriptsize, \textbackslash footnotesize, \textbackslash small,  \textbackslash normalsize, \textbackslash large, \textbackslash Large, \textbackslash LARGE, \textbackslash huge, \textbackslash Huge
 	
 	\begin{LTXexample}
-	\tiny Ce \scriptsize{texte} \footnotesize grossit \small {\`a} \normalsize vue \large d' \Large{oeil.} \\ \LARGE Fuyez \huge pauvre \Huge fou !
+		\tiny Ce \scriptsize{texte} \footnotesize grossit \small {\`a} \normalsize vue \large d' \Large{oeil.} \\ \LARGE Fuyez \huge pauvre \Huge fou !
 	\end{LTXexample}
 }
 
@@ -273,7 +299,7 @@ Hello, World !
 \frame[containsverbatim]{
 	\frametitle{La couleur}
 	Ajuster la couleur permettra de mettre en valeur certaines informations.
-
+	
 	Pensez à ajouter le bon package : \textbackslash usepackage\{color\}
 	
 	\begin{LTXexample}
@@ -285,35 +311,6 @@ Hello, World !
 	\end{LTXexample}
 }
 
-\subsubsection{Les espaces}
-\frame[containsverbatim]{
-\frametitle{Les espaces}
-\begin{LTXexample}
-Le nombre       d'espaces n'est pas important.
-\end{LTXexample}
-\begin{LTXexample}
-Un paragraphe d{\'e}bute ici.
-Une ligne vide apparait.
-
-Un nouveau paragraphe commence.
-\end{LTXexample}
-}
-
-\subsubsection{Les caractères spéciaux}
-\frame[containsverbatim]{
-\frametitle{Les caractères spéciaux}
-Les symboles suivants sont des caractères réservés :
-
-\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
-
-Pour les afficher dans votre document, placez un \textbackslash {} devant:
-
-\begin{LTXexample}
-\# \$ \% \^{} \& \_ \{ \} \~{}
-\textbackslash
-\end{LTXexample}
-}
-
 \frame[containsverbatim]{
 \frametitle{Les formules math{\'e}matiques}
 Les formules mat{\'e}matiques sont plac{\'e}es entre \$ et \$.
@@ -322,8 +319,6 @@ Les formules mat{\'e}matiques sont plac{\'e}es entre \$ et \$.
 $a^2 + b^2 = c^2$
 \end{LTXexample}
 }
-
-\subsubsection{Les commandes}
 
 \frame[containsverbatim]{
 \frametitle{Les commandes}
@@ -340,8 +335,6 @@ Vous pouvez commencer une nouvelle ligne juste ici ! \newline Merci!
 \end{LTXexample}
 }
 
-\subsubsection{Les commentaires}
-
 \frame[containsverbatim]{
 \frametitle{Les commentaires}
 Les commentaires commencent par le caractère \%.
@@ -353,7 +346,6 @@ Ce message est visible.
 \end{LTXexample}
 }
 
-\subsubsection{La structure du fichier}
 \frame[containsverbatim]{
 \frametitle{La structure du fichier}
 Lorsque \LaTeX{} traite un fichier, il s'attend à suivre une certaine structure.
@@ -415,7 +407,32 @@ Exemple de structure d'un article :
 \end{LTXexample}
 }
 
-\subsubsection{Le type de document}
+\frame[containsverbatim]{
+	\frametitle{Les ent{\^e}tes et pieds de page}
+	Pour les ent{\^e}tes et pieds de page, on utilise les commandes suivantes :
+	\begin{lstlisting}
+		\lhead{Ajout d'un ent{\^e}te {\`a} gauche} 
+		\chead{Ajout d'un ent{\^e}te au centre}
+		\rhead{Ajout d'un ent{\^e}te {\`a} droite}
+		\lfoot{Ajout d'un pied de page {\`a} gauche} 
+		\cfoot{Ajout d'un pied de page au centre} 
+		\rfoot{Ajout d'un pied de page {\`a} droite}
+	\end{lstlisting}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Les notes de page}
+	Les notes de page peuvent être ajoutée de la manière suivante :
+	\begin{lstlisting}
+	Ici on parle du cas du c\'el\`ebre Claude Bernard\footnote{m\'edecin et fondateur de la m\'edecine exp\'erimentale} qui a par la suite donn\'e son nom \`a l'UCBL.
+	\end{lstlisting}
+	
+	Ici on parle du cas du c\'el\`ebre Claude Bernard$^{[1]}$ qui a par la suite donn\'e son nom \`a l'UCBL.
+	
+	--
+	
+	[1] : m\'edecin et fondateur de la m\'edecine exp\'erimentale
+}
 
 \frame[containsverbatim]{
 \frametitle{Le type du document}
