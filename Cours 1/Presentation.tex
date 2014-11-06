@@ -108,7 +108,7 @@
 
 \frame{
 	\titlepage
-	Inspiré du cours de Marc Bailly-Bechet
+	Inspiré du cours de Marc Bailly-Bechet. \cite{cours}
 }
 
 \section{\TeX}	
@@ -423,15 +423,71 @@ Exemple de structure d'un article :
 \frame[containsverbatim]{
 	\frametitle{Les notes de page}
 	Les notes de page peuvent être ajoutée de la manière suivante :
-	\begin{lstlisting}
-	Ici on parle du cas du c\'el\`ebre Claude Bernard\footnote{m\'edecin et fondateur de la m\'edecine exp\'erimentale} qui a par la suite donn\'e son nom \`a l'UCBL.
+	\begin{lstlisting}	
+	Dijkstra\footnote{math\'{e}maticien et informaticien n\'{e}erlandais du XX$^{e}$ si\`{e}cle} avait une tr\`{e}s belle \'{e}criture manuscrite et a toujours refus\'{e} d'utiliser un traitement de texte, malgr\'{e} son domaine d'activit\'{e}, pr\'{e}f\'{e}rant la lettre manuscrite photocopi\'{e}e.
 	\end{lstlisting}
 	
-	Ici on parle du cas du c\'el\`ebre Claude Bernard$^{[1]}$ qui a par la suite donn\'e son nom \`a l'UCBL.
+	Dijkstra$^{[1]}$ avait une tr\`{e}s belle \'{e}criture manuscrite et a toujours refus\'{e} d'utiliser un traitement de texte, malgr\'{e} son domaine d'activit\'{e}, pr\'{e}f\'{e}rant la lettre manuscrite photocopi\'{e}e.
 	
 	--
 	
-	[1] : m\'edecin et fondateur de la m\'edecine exp\'erimentale
+	[1] : math\'{e}maticien et informaticien n\'{e}erlandais du XX$^{e}$ si\`{e}cle
+}
+
+\frame[containsverbatim]{
+	\frametitle{Les listes}
+	Les listes se construisent ainsi :
+	\begin{LTXexample}[pos=r]
+	\begin{enumerate}
+	\item partie 1
+	\item partie 2
+	\item partie 3
+	\end{enumerate}
+	\begin{itemize}
+	\item partie 1
+	\item partie 2
+	\item partie 3
+	\end{itemize}
+	\begin{description}
+	\item[cas 1.0] partie 1
+	\item[cas 1.1] partie 2
+	\item[cas 2.0] partie 3
+	\end{description}
+	\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Les tableaux}
+	Pour les tableaux, il faut s'y prendre de la manière suivante :
+	\begin{lstlisting}
+		\begin{table}
+			\begin{tabular}{|l|cc|}
+				OS & Plateforme & Part des serveurs http \\
+				\hline
+				Unix & Toutes & 32\% \\
+				Linux & Toutes & 26\% \\
+				Windows NT & Intel & 23\% \\
+			\end{tabular}
+			\caption{Ceci est un tableau pr\'esentant la part des serveurs occup\'es par chaque syst\`eme d'exploitation.}\label{tab_serveur}
+		\end{table}
+		Ici, je fais r\'ef\'erence \`a mon tableau \ref{tab_serveur}
+	\end{lstlisting}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Les tableaux}
+	
+	\begin{table}
+		\begin{tabular}{|l|cc|}
+			OS & Plateforme & Part des serveurs http \\
+			\hline
+			Unix & Toutes & 32\% \\
+			Linux & Toutes & 26\% \\
+			Windows NT & Intel & 23\% \\
+		\end{tabular}
+		\caption{Ceci est un tableau pr\'esentant la part des serveurs occup\'es par chaque syst\`eme d'exploitation.}\label{tab_serveur}
+	\end{table}
+	Ici, je fais r\'ef\'erence \`a mon tableau \ref{tab_serveur}
 }
 
 \frame[containsverbatim]{
@@ -480,25 +536,19 @@ Contenu
 \end{LTXexample}
 }
 
-\subsection{Les {\'e}diteurs}
-
-\subsubsection{Linux}
-
 \frame[containsverbatim]{
-	\frametitle{Gummi}
+	\frametitle{La bibliographie}
+	La bibliographie sera très utile pour indiquer vos références et permettre à vos lecteurs de les vérifier et prolonger leur lecture.
+	
+	\begin{LTXexample}
+		\begin{thebibliography}{9}
+			\bibitem{wikipedia}
+			Wikipedia, somme de toutes les connaissances humaines.
+		\end{thebibliography}
+		
+		On trouve des informations tr{\`e}s s{\'e}rieuses si l'on cherche au bon endroit[\cite{wikipedia}].
+	\end{LTXexample}
 }
-
-\subsubsection{Windows}
-
-\frame[containsverbatim]{
-	\frametitle{Texmaker}
-}
-
-\frame[containsverbatim]{
-	\frametitle{TeXstudio}
-}
-
-\subsubsection{Mac}
 
 \section{Packages}
 
@@ -534,9 +584,7 @@ Bu T{\"{u}}rk\c cedir,
 Et c'est du fran\c cais
 \end{LTXexample}
 
-En savoir plus :
-
-\url{http://www.tuteurs.ens.fr/logiciels/latex/manuel.html}
+En savoir plus : \cite{babel}
 }
 
 \subsection{Tikz}
@@ -552,11 +600,7 @@ TikZ permet de dessiner des schémas.
 
 Remarque : il est aisé de générer des schémas TikZ avec Inkscape.
 
-En savoir plus :
-
-\url{http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf}
-
-\url{http://www.texample.net/tikz/examples/}
+En savoir plus : \cite{tikz1,tikz2}
 }
 
 \subsection{xy}
@@ -593,9 +637,7 @@ Un dernier exemple :
   &D}
 \end{LTXexample}
 
-Pour en savoir plus : 
-
-\url{http://math.arizona.edu/~swig/documentation/xypic/Xypic.pdf}
+Pour en savoir plus : \cite{asmth}
 }
 
 \subsection{amsmath}
@@ -609,9 +651,7 @@ a_2& =b_2+c_2-d_2+e_2
 \end{align}
 \end{LTXexample}
 
-Pour en savoir plus : 
-
-\url{http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf}
+Pour en savoir plus : \cite{asmth}
 }
 
 \frame[containsverbatim]{
@@ -627,9 +667,7 @@ $A_{m,n} =
  \end{pmatrix}$
 \end{LTXexample}
 
-Pour en savoir plus : 
-
-\url{http://en.wikibooks.org/wiki/LaTeX/Mathematics}
+Pour en savoir plus : \cite{latex_math}
 }
 
 \subsection{amsthm}
@@ -643,9 +681,7 @@ Ceci est mon th{\'e}or{\`e}me.
 \end{lem}
 \end{LTXexample}
 
-Pour en savoir plus : 
-
-\url{http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf}
+Pour en savoir plus : \cite{latex_math}
 }
 
 \subsection{graphicx}
@@ -658,9 +694,24 @@ graphicx permet d'afficher des images.
 \end{figure}
 \end{LTXexample}
 
-Pour en savoir plus : 
+En savoir plus : \cite{images}
+}
 
-\url{http://fr.wikibooks.org/wiki/LaTeX/Inclure\_des\_images}
+\section{Bibliographie}
+\frame[containsverbatim]{
+	\frametitle{Bibliographie}
+	Bibliographie
+	
+	\begin{thebibliography}{9}
+		\bibitem{cours} http://pbil.univ-lyon1.fr/members/mbailly/Comm\_Scientifique/M1/cours\_latex.pdf
+		\bibitem{td} http://www.math.ens.fr/~millien/tdlatex/poly.pdf
+		\bibitem{latex_math} http://en.wikibooks.org/wiki/LaTeX/Mathematics
+		\bibitem{asmth} http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf
+		\bibitem{babel} http://www.tuteurs.ens.fr/logiciels/latex/manuel.html
+		\bibitem{tikz1} http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf
+		\bibitem{tikz2} http://www.texample.net/tikz/examples/
+		\bibitem{images} http://fr.wikibooks.org/wiki/LaTeX/Inclure\_des\_images
+	\end{thebibliography}
 }
 
 \end{document}
