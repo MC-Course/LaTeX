@@ -10,6 +10,7 @@
 \usepackage{color}
 \usepackage{tikz}
 \usepackage[all]{xy}
+\usepackage{pgfplots}
 
 \usepackage{listings}
 %\usepackage{verbatim}
@@ -347,10 +348,14 @@ $a^2 + b^2 = c^2$
 
 \frame[containsverbatim]{
 	\frametitle{Les fractions}
-		On peut noter les fractions avec la commande frac :
+	Pour les fractions, on utilise la commande frac.
+	
+	Si l'on a besoin de grandes parenthèses, on peut utiliser \textbackslash left\(   et \textbackslash right\)
 	
 	\begin{LTXexample}
 	$\frac{n!}{k!(n-k)!} = \binom{n}{k}$
+	
+	$\left(a + \frac{1}{a}\right)\left(b + \frac{1}{b}\right) = ab + \frac{2}{ab} - 2$
 	\end{LTXexample}
 }
 
@@ -637,6 +642,20 @@ Remarque : il est aisé de générer des schémas TikZ avec Inkscape.
 En savoir plus : \cite{tikz,Inkscape}
 }
 
+\frame[containsverbatim]{
+	\frametitle{Tikz}
+	TikZ permet aussi des tracer des fonctions.	
+	\begin{LTXexample}
+		\begin{tikzpicture}
+			\begin{axis}[width=190pt,height=150pt,
+				xlabel=$x$, 
+				ylabel={$f(x) = x^2 - x +4$}] 
+			\addplot {x^2 - x +4}; 
+			\end{axis}
+		\end{tikzpicture}
+	\end{LTXexample}
+}
+
 \subsection{xy}
 \frame[containsverbatim]{
 \frametitle{xy}
@@ -787,13 +806,29 @@ En savoir plus : \cite{images}
 \frame[containsverbatim]{
 	\frametitle{Exercice 1}
 	
-%	\begin{math}
-%		
-%	\end{math}
-%	\begin{align*}
-%		f(x) 	&= 1 + 2 \\
-%				&= 2 + 1
-%	\end{align*}
+	Reproduisez le modèle ci-dessous en \LaTeX:
+	\begin{align*}
+		a^2 + b^2 + 2ab	&<= 2(a^2 + b^2) \\
+		(a + b)^2		&<= 2(a^2 + b^2) \\
+		\left(\frac{a + b}{2}\right)^2		&<= \frac{a^2 + b^2}{2}
+	\end{align*}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Exercice 2}
+	
+	Reproduisez le modèle ci-dessous en \LaTeX:
+	
+	\begin{tikzpicture}
+	\begin{axis}[domain=0:1,legend pos=outer north east]
+	\addplot {cos(deg(x))}; 
+	\addplot {sin(deg(x))};
+	\addplot {tan(deg(x))};
+	\addplot {tan(deg(x))};
+	\addplot {x^3};
+	\legend{$\sin(x)$,$\cos(x)$,$x^2$}
+	\end{axis}
+	\end{tikzpicture}
 }
 
 \subsection{Fin}

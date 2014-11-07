@@ -1,0 +1,144 @@
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass{beamer}
+\usepackage{etex}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais, turkish]{babel}
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage[all]{xy}
+\usepackage{pgfplots}
+
+\usepackage{listings}
+%\usepackage{verbatim}
+
+\usepackage{bera}
+\usepackage{caption}
+\captionsetup{%
+   margin=0em,
+   font={scriptsize,rm},
+   labelfont={color=Maroon,bf},
+   justification=justified,%default: RaggedRight. Other options: justified, centering
+   labelsep=quad%default:colon. Options: period, space, quad, newline
+}
+\usepackage{showexpl}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\SX@codeInput}{xleftmargin=0pt,xrightmargin=0pt}{}
+  {\typeout{***Successfully patched \protect\SX@codeInput***}}
+  {\typeout{***ERROR! Failed to patch \protect\SX@codeInput***}}
+\makeatother
+
+\lstloadlanguages{[LaTeX]Tex} 
+\lstset{% 
+    basicstyle=\ttfamily\small, 
+    commentstyle=\itshape\ttfamily\small, 
+    showspaces=false, 
+    showstringspaces=false, 
+    breaklines=true, 
+    breakautoindent=true, 
+    captionpos=t 
+} 
+\lstset{%
+    breaklines=true,%default : false 
+    breakindent=10pt,%default: 20pt 
+    linewidth=\linewidth,%default : \linewidth,
+    basicstyle=\ttfamily\tiny,% cannot take arguments
+    keywordstyle=\color{Blue}\sffamily\bfseries,                                
+    identifierstyle=\color{Black},                                      
+    commentstyle=\color{OliveGreen}\itshape,                                    
+    stringstyle=\rmfamily,                                                      
+    showspaces=false,%default false
+    showstringspaces=false,%default: true
+    backgroundcolor=\color{Yellow!30},
+    frame=single,%default frame=none 
+    rulecolor=\color{Red},  
+    % the following must be defined to make hacking work.
+    framerule=0.4pt,%expand outward 
+    framesep=3pt,%expand outward
+    xleftmargin=3.4pt,%to make the frame fits in the text area. 
+    xrightmargin=3.4pt,%to make the frame fits in the text area. 
+    tabsize=2%,%default :8 only influence the lstlisting and lstinline.
+}
+\lstset{%
+    %explpreset below will affect LTX only.
+    explpreset={%
+                            language={[LaTeX]TeX},
+                            captionpos=t,
+                            aboveskip=2\fboxsep,                        
+                            pos=b,
+                            vsep=\fboxsep%vertical space between formatted and input.
+                         }%
+}
+
+\usetheme{Hannover}
+
+\newtheorem{defi}{Définition}
+\newtheorem{thm}{Théorème}
+
+\title{\LaTeX - exercices}
+\author{Charles Martin}
+
+\begin{document}
+
+\selectlanguage{francais}
+
+\definecolor{Red}{RGB}{255,0,0}
+\definecolor{Grey}{RGB}{205,201,201}
+\definecolor{Yellow}{RGB}{255,255,0}
+\definecolor{Blue}{RGB}{50,50,150}
+\definecolor{Black}{RGB}{0,0,0}
+\definecolor{OliveGreen}{RGB}{0,100,0}
+
+\frame{
+	\titlepage
+	Inspiré du cours de Marc Bailly-Bechet. \cite{cours}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Template}
+	Vous trouverez ici un modèle vide de document \LaTeX qui servira de base pour les exercices qui vont suivre : \newline
+	
+	\begin{center}
+		\url{http://tiny.cc/LatexMinimal}
+	\end{center}
+	
+	--
+	
+	L'url complète :
+	\url{https://raw.githubusercontent.com/MC-Course/LaTeX/master/Cours%201/Templates/Minimal.tex}
+	
+}
+
+\frame[containsverbatim]{
+	\frametitle{Exercice 1}
+	
+	Reproduisez le modèle ci-dessous en \LaTeX:
+	\begin{align*}
+		a^2 + b^2 + 2ab	&<= 2(a^2 + b^2) \\
+		(a + b)^2		&<= 2(a^2 + b^2) \\
+		\left(\frac{a + b}{2}\right)^2		&<= \frac{a^2 + b^2}{2}
+	\end{align*}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Exercice 2}
+	
+	Reproduisez le modèle ci-dessous en \LaTeX:
+	
+	\begin{tikzpicture}
+	\begin{axis}[domain=0:1,legend pos=outer north east]
+	\addplot {cos(deg(x))}; 
+	\addplot {sin(deg(x))};
+	\addplot {tan(deg(x))};
+	\addplot {tan(deg(x))};
+	\addplot {x^3};
+	\legend{$\sin(x)$,$\cos(x)$,$x^2$}
+	\end{axis}
+	\end{tikzpicture}
+}
+
+\end{document}
