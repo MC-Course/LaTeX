@@ -4,7 +4,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais, turkish]{babel}
+\usepackage[francais, turkish, spanish]{babel}
 \usepackage{amssymb,amsthm,amsmath}
 \usepackage{xcolor}
 \usepackage{color}
@@ -111,6 +111,7 @@
 	\end{center}
 }
 
+\section{Formules}
 \frame[containsverbatim]{
 	\frametitle{Exercice 1}
 	
@@ -122,6 +123,7 @@
 	\end{align*}
 }
 
+\section{Tikz}
 \frame[containsverbatim]{
 	\frametitle{Exercice 2}
 	
@@ -132,11 +134,42 @@
 	\addplot {cos(deg(x))}; 
 	\addplot {sin(deg(x))};
 	\addplot {tan(deg(x))};
-	\addplot {tan(deg(x))};
+	\addplot {x^2};
 	\addplot {x^3};
-	\legend{$\sin(x)$,$\cos(x)$,$x^2$}
+	\legend{$\cos(x)$,$\sin(x)$,$\tan(x)$,$x^2$,$x^3$}
 	\end{axis}
 	\end{tikzpicture}
+}
+
+\section{Tableau}
+\frame[containsverbatim]{
+	\frametitle{Exercice 3}
+	
+	Reproduisez le modèle ci-dessous en \LaTeX:
+	
+	\begin{tabular}{|*{2}{c|}l r|}
+		\hline
+		case 1 & case 2 & case 3 & case 4 \\
+		centrée & centrée & gauche & droite \\
+		\hline
+		pied 1 & pied 2 & pied 3 & pied 4 \\
+		\hline
+	\end{tabular}
+}
+
+\section{xy}
+\frame[containsverbatim]{
+	\frametitle{Exercice 4}
+	
+	Reproduisez le modèle ci-dessous en \LaTeX:
+	
+	\begin{displaymath}
+	\xymatrix{
+		T_1 \ar@/_/[rdd] \ar@{=>}[rd] \ar@/^/[rrrd] \ar@/^-6pc/[rrdd] \\
+		& A \ar[r] \ar[d] & B \ar[d] \ar@{-->}[r] & E \ar[ld] \\
+		& C \ar[ru] & D  \ar[l] \ar[lu]
+	}
+	\end{displaymath}
 }
 
 \end{document}
