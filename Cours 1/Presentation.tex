@@ -762,6 +762,21 @@ En savoir plus : \cite{images}
 	\end{itemize}
 }
 
+\subsection{Exercices}
+
+\frame[containsverbatim]{
+	\frametitle{Template}
+	Les documents nécessaires aux exercices : \newline
+	
+	\begin{center}
+		Cours : \url{http://tiny.cc/LatexCours}
+		
+		Template : \url{http://tiny.cc/LatexMinimal}
+		
+		Exercices : \url{http://tiny.cc/LatexExercices}
+	\end{center}
+}
+
 \section{Bibliographie}
 \frame[containsverbatim]{
 	\frametitle{Bibliographie}
@@ -782,53 +797,10 @@ En savoir plus : \cite{images}
 		\bibitem{BitBucket} https://bitbucket.org/
 		\bibitem{Inkscape}
 		https://inkscape.org/fr/
-		http://www.cpt.univ-mrs.fr/~masson/latex/Cours-LaTeX-A4-07.pdf	
+		http://www.cpt.univ-mrs.fr/~masson/latex/Cours-LaTeX-A4-07.pdf
+		\bibitem{Sources}
+		https://github.com/MC-Course/LaTeX	
 	\end{thebibliography}
-}
-
-\subsection{Exercices}
-
-\frame[containsverbatim]{
-	\frametitle{Template}
-	Vous trouverez ici un modèle vide de document \LaTeX qui servira de base pour les exercices qui vont suivre : \newline
-	
-	\begin{center}
-		\url{http://tiny.cc/LatexMinimal}
-	\end{center}
-	
-	--
-	
-	L'url complète :
-	\url{https://raw.githubusercontent.com/MC-Course/LaTeX/master/Cours%201/Templates/Minimal.tex}
-	
-}
-
-\frame[containsverbatim]{
-	\frametitle{Exercice 1}
-	
-	Reproduisez le modèle ci-dessous en \LaTeX:
-	\begin{align*}
-		a^2 + b^2 + 2ab	&<= 2(a^2 + b^2) \\
-		(a + b)^2		&<= 2(a^2 + b^2) \\
-		\left(\frac{a + b}{2}\right)^2		&<= \frac{a^2 + b^2}{2}
-	\end{align*}
-}
-
-\frame[containsverbatim]{
-	\frametitle{Exercice 2}
-	
-	Reproduisez le modèle ci-dessous en \LaTeX:
-	
-	\begin{tikzpicture}
-	\begin{axis}[domain=0:1,legend pos=outer north east]
-	\addplot {cos(deg(x))}; 
-	\addplot {sin(deg(x))};
-	\addplot {tan(deg(x))};
-	\addplot {tan(deg(x))};
-	\addplot {x^3};
-	\legend{$\sin(x)$,$\cos(x)$,$x^2$}
-	\end{axis}
-	\end{tikzpicture}
 }
 
 \subsection{Fin}
