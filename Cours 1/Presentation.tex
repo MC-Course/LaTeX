@@ -299,11 +299,32 @@ Pour les afficher dans votre document, placez un \textbackslash {} devant:
 
 \frame[containsverbatim]{
 \frametitle{Les formules math{\'e}matiques}
-Les formules mat{\'e}matiques sont plac{\'e}es entre \$ et \$.
-
+Les formules mat{\'e}matiques sont plac{\'e}es :
+	\begin{itemize}
+		\item entre \$ et \$.
+		\item entre \textbackslash( et \textbackslash)
+		\item \textbackslash begin\{math\} et \textbackslash end\{math\}
+	\end{itemize}
+ 
+ ou bien séparée du reste :
+	\begin{itemize}
+		\item entre \$\$ et \$\$.
+		\item entre \textbackslash [ et \textbackslash ]
+		\item \textbackslash begin\{displaymath\} et\textbackslash end\{displaymath\}
+	\end{itemize}
+	
 \begin{LTXexample}
 $a^2 + b^2 = c^2$
 \end{LTXexample}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Les formules math{\'e}matiques}
+	
+	\begin{LTXexample}
+		Une formule ($a^2 + b^2 = c^2$) est pr{\'e}sente dans cette ligne.
+		Cette formule ($$a^2 + b^2 = c^2$$) est {\`a} l'{\'e}cart.
+	\end{LTXexample}
 }
 
 \frame[containsverbatim]{
@@ -613,7 +634,7 @@ TikZ permet de dessiner des schémas.
 
 Remarque : il est aisé de générer des schémas TikZ avec Inkscape.
 
-En savoir plus : \cite{tikz1,tikz2}
+En savoir plus : \cite{tikz,Inkscape}
 }
 
 \subsection{xy}
@@ -718,7 +739,7 @@ En savoir plus : \cite{images}
 	
 	\begin{itemize}
 		\item latexdiff\cite{latexdiff}, qui permet de comparer 2 versions d'une source
-		\item un contrôleur de code source, Git par exemple
+		\item un contrôleur de code source, Git\cite{Git, BitBucket} par exemple
 	\end{itemize}
 }
 
@@ -733,21 +754,48 @@ En savoir plus : \cite{images}
 		\bibitem{latex_math} http://en.wikibooks.org/wiki/LaTeX/Mathematics
 		\bibitem{asmth} http://mirror.isoc.org.il/pub/ctan/macros/latex/required/amslatex/amscls/doc/amsthdoc.pdf
 		\bibitem{babel} http://www.tuteurs.ens.fr/logiciels/latex/manuel.html
-		\bibitem{tikz1} http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf
-		\bibitem{tikz2} http://www.texample.net/tikz/examples/
+		\bibitem{tikz} http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf
+		http://www.texample.net/tikz/examples/tag/graphs/
+		http://www.texample.net/tikz/examples/
 		\bibitem{images} http://fr.wikibooks.org/wiki/LaTeX/Inclure\_des\_images
 		\bibitem{latexdiff} https://fr.sharelatex.com/blog/2013/02/16/using-latexdiff-for-marking-changes-to-tex-documents.html
+		\bibitem{Git} https://windows.github.com/
+		\bibitem{BitBucket} https://bitbucket.org/
+		\bibitem{Inkscape}
+		https://inkscape.org/fr/
+		http://www.cpt.univ-mrs.fr/~masson/latex/Cours-LaTeX-A4-07.pdf	
 	\end{thebibliography}
 }
 
 \subsection{Exercices}
+
+\frame[containsverbatim]{
+	\frametitle{Template}
+	Vous trouverez ici un modèle vide de document \LaTeX qui servira de base pour les exercices qui vont suivre :
+	
+	
+}
+
 \frame[containsverbatim]{
 	\frametitle{Exercice 1}
 	
+%	\begin{math}
+%		
+%	\end{math}
 %	\begin{align*}
 %		f(x) 	&= 1 + 2 \\
 %				&= 2 + 1
 %	\end{align*}
+}
+
+\subsection{Fin}
+\frame[containsverbatim]{
+	\frametitle{}
+	
+	\begin{center}
+		\Huge
+		Merci !
+	\end{center}
 }
 
 \end{document}
