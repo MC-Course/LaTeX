@@ -201,27 +201,58 @@
 
 \subsection{Syntaxe}
 \frame[containsverbatim]{
-\frametitle{Hello World}
-Exemple de Hello World en \LaTeX :
-\begin{LTXexample}
-\documentclass{article}
-\begin{document}
-Hello, World !
-\end{document}
-\end{LTXexample}
+	\frametitle{Hello World}
+	Exemple de Hello World en \LaTeX :
+	\begin{LTXexample}
+		\documentclass{article}
+		\begin{document}
+			Hello, World !
+		\end{document}
+	\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Les commandes}
+	Une commande commence par un \textbackslash{} et a un nom constitué de lettres uniquement.
+	
+	\textbackslash command[parametre optionnel]\{parametre\}
+	
+	\begin{LTXexample}
+		Vous pouvez \textsl{compter} sur moi!
+	\end{LTXexample}
+	
+	\begin{LTXexample}
+		Vous pouvez commencer une nouvelle ligne juste ici ! \newline Merci!
+	\end{LTXexample}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Les commentaires}
+	Les commentaires commencent par le caractère \%.
+	Un commentaire ne sera jamais affiché, et servira généralement à ajouter des remarques sur le code, voir à désactiver du code.
+	\begin{LTXexample}
+		Ce message est visible.
+		%Mais pas ce message.
+		%\textsl{Ni cette commande.}
+		
+	\end{LTXexample}
 }
 
 \frame[containsverbatim]{
 \frametitle{Les espaces}
-\begin{LTXexample}
-Le nombre       d'espaces n'est pas important.
-\end{LTXexample}
-\begin{LTXexample}
-Un paragraphe d{\'e}bute ici.
-Une ligne vide apparait.
+	\begin{LTXexample}
+	Le nombre       d'espaces n'est pas important.
+	\end{LTXexample}
+	\begin{LTXexample}
+	Un paragraphe d{\'e}bute ici.
+	
+	Lorsque l'on ajoute une ligne vide, un nouveau paragraphe commence.
+	\end{LTXexample}
 
-Un nouveau paragraphe commence.
-\end{LTXexample}
+	\begin{lstlisting}
+	Pour forcer une nouvelle ligne : \newline
+	Pour forcer une nouvelle page : \newpage
+	\end{lstlisting}
 }
 
 \frame[containsverbatim]{
@@ -252,7 +283,7 @@ Pour les afficher dans votre document, placez un \textbackslash {} devant:
 	\subparagraph{Sous-Paragraphe 1}
 	\end{lstlisting}
 	
-	La numérotation est automatique. Il est possible de la désactiver en rajouter *.
+	La numérotation est automatique. Il est possible de la désactiver en rajoutant *.
 	
 	\begin{lstlisting}
 	\section{Section avec numerotation}
@@ -357,32 +388,6 @@ $a^2 + b^2 = c^2$
 	
 	$\left(a + \frac{1}{a}\right)\left(b + \frac{1}{b}\right) = ab + \frac{2}{ab} - 2$
 	\end{LTXexample}
-}
-
-\frame[containsverbatim]{
-\frametitle{Les commandes}
-Une commande commence par un \textbackslash{} et a un nom constitué de lettres uniquement.
-
-\textbackslash command[parametre optionnel]\{parametre\}
-
-\begin{LTXexample}
-Vous pouvez \textsl{compter} sur moi!
-\end{LTXexample}
-
-\begin{LTXexample}
-Vous pouvez commencer une nouvelle ligne juste ici ! \newline Merci!
-\end{LTXexample}
-}
-
-\frame[containsverbatim]{
-\frametitle{Les commentaires}
-Les commentaires commencent par le caractère \%.
-Un commentaire ne sera jamais affiché, et servira généralement à ajouter des remarques sur le code, voir à désactiver du code.
-\begin{LTXexample}
-Ce message est visible.
-%Mais pas ce message.
-%\textsl{Ni cette commande.}
-\end{LTXexample}
 }
 
 \frame[containsverbatim]{
