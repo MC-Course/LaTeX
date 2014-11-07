@@ -125,7 +125,22 @@
 
 \section{Tikz}
 \frame[containsverbatim]{
-	\frametitle{Exercice 2}
+	\frametitle{Exercice 2.1}
+	
+	Reproduisez le modèle ci-dessous en \LaTeX:
+	
+	\begin{tikzpicture}
+	\begin{axis}[legend pos=outer north east]
+	\addplot[color=blue]{x};
+	\addplot[color=red]{x^2};
+	\addplot[color=green]{x^3};
+	\legend{$x$,$x^2$,$x^3$}
+	\end{axis}
+	\end{tikzpicture}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Exercice 2.2}
 	
 	Reproduisez le modèle ci-dessous en \LaTeX:
 	
@@ -159,7 +174,7 @@
 
 \section{xy}
 \frame[containsverbatim]{
-	\frametitle{Exercice 4}
+	\frametitle{Exercice 4.1}
 	
 	Reproduisez le modèle ci-dessous en \LaTeX:
 	
@@ -170,6 +185,18 @@
 		& C \ar[ru] & D  \ar[l] \ar[lu]
 	}
 	\end{displaymath}
+}
+
+\frame[containsverbatim]{
+	\frametitle{Exercice 4.1}
+	
+	Reproduisez le modèle ci-dessous en \LaTeX:
+	
+%	\begin{displaymath}
+%		 \xymatrix{
+%		 	A \ar@/^/@{^{<}-_{>}[rr] & B}
+%		 	}
+%	\end{displaymath}
 }
 
 \end{document}
